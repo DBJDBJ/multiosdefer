@@ -6,6 +6,8 @@
             "type": "shell",
             "command": "D:/msys64/ucrt64/bin/gcc.exe",
             "args": [
+                "-g",
+                "-O0",
                 "-o",
                 "defer_test_gcc.exe",
                 "main.c",
@@ -32,7 +34,7 @@
             "command": "cmd",
             "args": [
                 "/c",
-                "\"D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvars64.bat\" && cl /Fe:defer_test_msvc.exe main.c /W4"
+                "\"D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvars64.bat\" && cl /Zi /Od /Fe:defer_test_msvc.exe main.c /W4"
             ],
             "group": "build",
             "presentation": {
@@ -51,6 +53,8 @@
             "type": "shell",
             "command": "cl",
             "args": [
+                "/Zi",
+                "/Od",
                 "/Fe:defer_test_msvc.exe",
                 "main.c",
                 "/W4"

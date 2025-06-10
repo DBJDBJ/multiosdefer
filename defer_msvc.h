@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <windows.h>
 
+#include "defer_msvc_with_defer.h"
+
 // MSVC defer using __try/__finally blocks
 #define defer \
     __try { \

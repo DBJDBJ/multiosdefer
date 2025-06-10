@@ -23,16 +23,15 @@
             "preLaunchTask": "Build with GCC"
         },
         {
-            "name": "Debug with MSVC",
-            "type": "cppdbg", 
+            "name": "MSVC Debug",
+            "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/defer_test_msvc.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
+            "console": "integratedTerminal",
             "preLaunchTask": "Build with MSVC"
         }
     ]
