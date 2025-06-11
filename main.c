@@ -3,7 +3,7 @@
 
 // Compiler detection
 #if defined(_MSC_VER)
-    #include "defer_msvc.h"
+    #include "msvc_defer_we_preffer.h"
     #define COMPILER_NAME "MSVC"
 #elif defined(__GNUC__)
     #include "defer_gcc.h"  
@@ -17,15 +17,16 @@ int main(void) {
     printf("====================\n\n");
     
 #if defined(_MSC_VER)
-    with_defer_test();
-    printf("\n");
-    test_defer_msvc();
-    printf("\n");
-    test_defer_msvc_nested();
+    msvc_defer_we_preffer();
+    // printf("\n");
+    // test_defer_msvc();
+    // printf("\n");
+    // test_defer_msvc_nested();
 #elif defined(__GNUC__)
     test_defer_gcc();
 #endif
     
     printf("\n%s defer test completed!\n", COMPILER_NAME);
+    printf("====================\n\n");
     return 0;
 }

@@ -7,7 +7,11 @@
 #include <stdio.h>
 #include <windows.h>
 
-#include "defer_msvc_with_defer.h"
+//-------------------------------------------------------------------
+// Abandoned
+// Macros in here seem like unncessary complicatons
+// It is much cleaner to use "naked" __try / __finally
+//-------------------------------------------------------------------
 
 // MSVC defer using __try/__finally blocks
 #define defer \
