@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build with GCC",
+            "label": "GCC Build",
             "type": "shell",
             "command": "D:/msys64/ucrt64/bin/gcc.exe",
             "args": [
@@ -28,28 +28,28 @@
                 "cwd": "${workspaceFolder}"
             }
         },
+        // {
+        //     "label": "Build with MSVC",
+        //     "type": "shell",
+        //     "command": "cmd",
+        //     "args": [
+        //         "/c",
+        //         "\"D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvars64.bat\" && cl /Zi /Od /Fe:defer_test_msvc.exe main.c /W4"
+        //     ],
+        //     "group": "build",
+        //     "presentation": {
+        //         "echo": true,
+        //         "reveal": "always",
+        //         "focus": false,
+        //         "panel": "shared"
+        //     },
+        //     "problemMatcher": ["$msCompile"],
+        //     "options": {
+        //         "cwd": "${workspaceFolder}"
+        //     }
+        // },
         {
-            "label": "Build with MSVC",
-            "type": "shell",
-            "command": "cmd",
-            "args": [
-                "/c",
-                "\"D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvars64.bat\" && cl /Zi /Od /Fe:defer_test_msvc.exe main.c /W4"
-            ],
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "problemMatcher": ["$msCompile"],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            }
-        },
-        {
-            "label": "Build with MSVC (Developer Command Prompt)",
+            "label": "MSVC Build",
             "type": "shell",
             "command": "cl",
             "args": [
@@ -67,39 +67,39 @@
                 "panel": "shared"
             },
             "problemMatcher": ["$msCompile"],
-            "detail": "Use this if you opened VS Code from Developer Command Prompt"
+            "detail": "Open VS Code from Developer Command Prompt"
         },
-        {
-            "label": "Run GCC Build",
-            "type": "shell",
-            "command": "${workspaceFolder}/defer_test_gcc.exe",
-            "group": "test",
-            "dependsOn": "Build with GCC",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "windows": {
-                "command": "${workspaceFolder}\\defer_test_gcc.exe"
-            }
-        },
-        {
-            "label": "Run MSVC Build", 
-            "type": "shell",
-            "command": "${workspaceFolder}/defer_test_msvc.exe",
-            "group": "test",
-            "dependsOn": "Build with MSVC",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "windows": {
-                "command": "${workspaceFolder}\\defer_test_msvc.exe"
-            }
-        }
+    //     {
+    //         "label": "Run GCC Build",
+    //         "type": "shell",
+    //         "command": "${workspaceFolder}/defer_test_gcc.exe",
+    //         "group": "test",
+    //         "dependsOn": "Build with GCC",
+    //         "presentation": {
+    //             "echo": true,
+    //             "reveal": "always",
+    //             "focus": false,
+    //             "panel": "shared"
+    //         },
+    //         "windows": {
+    //             "command": "${workspaceFolder}\\defer_test_gcc.exe"
+    //         }
+    //     },
+    //     {
+    //         "label": "Run MSVC Build", 
+    //         "type": "shell",
+    //         "command": "${workspaceFolder}/defer_test_msvc.exe",
+    //         "group": "test",
+    //         "dependsOn": "Build with MSVC",
+    //         "presentation": {
+    //             "echo": true,
+    //             "reveal": "always",
+    //             "focus": false,
+    //             "panel": "shared"
+    //         },
+    //         "windows": {
+    //             "command": "${workspaceFolder}\\defer_test_msvc.exe"
+    //         }
+    //     }
     ]
 }

@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug with GCC",
+            "name": "GCC Debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/defer_test_gcc.exe",
@@ -20,7 +20,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Build with GCC"
+            "preLaunchTask": "GCC Build"
         },
         {
             "name": "MSVC Debug",
@@ -32,7 +32,7 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "integratedTerminal",
-            "preLaunchTask": "Build with MSVC"
+            "preLaunchTask": "MSVC Build"
         }
     ]
 }
