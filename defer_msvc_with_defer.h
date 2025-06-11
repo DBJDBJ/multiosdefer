@@ -33,8 +33,7 @@ void with_defer_test()
 
     __try
     { // main code
-        f = fopen("test_with_defer.txt", "w");
-        if (!f)
+        if (fopen_s(&f, "test_with_defer.txt", "w") != 0 || !f)
             return;
         if (1 > fwrite("Hello, MSVC WITH_DEFER!\n", 1, 27, f))
         {
@@ -42,7 +41,8 @@ void with_defer_test()
             return;
         }
         fclose(f);
-        f = fopen("test_with_defer.txt", "r");
+        if (fopen_s(&f, "test_with_defer.txt", "r") != 0 || !f)
+            return;
         char buf[256] = {0};
         fgets(buf, sizeof(buf), f);
         printf("Read: %s", buf);
