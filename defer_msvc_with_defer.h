@@ -2,6 +2,8 @@
 #pragma once
 #define DEFER_MSCV_WITH_DEFER_H
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -15,30 +17,42 @@
         cleanup_code;                       \
     }
 
+#define DBJ_DEFER(main_block, cleanup_block) \
+    __try                                    \
+    main_block __finally cleanup_block
+
 // Usage:
 void with_defer_test()
 {
-    printf("=== MSVC WITH_DEFER Test Begin ===\n");
-    FILE *f = fopen("test_with_defer.txt", "w+");
+    DBJ_DEFER(
+        { printf("DBJ_DEFER main block\n"); },
+        { printf("DBJ_DEFER final block\n"); });
 
-    WITH_DEFER(
+    printf("=== MSVC WITH_DEFER Test Begin ===\n");
+    FILE *f = NULL;
+
+    __try
+    { // main code
+        f = fopen("test_with_defer.txt", "w");
+        if (!f)
+            return;
+        if (1 > fwrite("Hello, MSVC WITH_DEFER!\n", 1, 27, f))
         {
-            if (f) fclose(f);
-            printf("=== MSVC WITH_DEFER Test End ===\n");
-        } // cleanup
-        ,
-        { // main code
-            if (!f)
-                return;
-                if ( 1 > fwrite("Hello, MSVC WITH_DEFER!\n", 1, 27, f))
-                {
-                    perror("Failed to write to file");
-                    return;
-                }
-            char buf[256] = {0};
-            fgets(buf, sizeof(buf), f);
-            printf("Read: %s", buf);
-        });
+            perror("Failed to write to file");
+            return;
+        }
+        fclose(f);
+        f = fopen("test_with_defer.txt", "r");
+        char buf[256] = {0};
+        fgets(buf, sizeof(buf), f);
+        printf("Read: %s", buf);
+    }
+    __finally
+    {
+        if (f)
+            fclose(f);
+        printf("=== MSVC WITH_DEFER Test End ===\n");
+    } // cleanup
 }
 
 #endif // DEFER_MSCV_WITH_DEFER_H
