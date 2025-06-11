@@ -130,6 +130,14 @@ if exist *.ilk (
     del *.ilk
     echo Deleted: *.ilk files
 )
+if exist *.idb (
+    del *.idb
+    echo Deleted: *.idb files
+)
+if exist *.txt (
+    del *.txt
+    echo Deleted: *.txt files
+)
 echo [CLEAN] Cleanup completed
 goto :end
 

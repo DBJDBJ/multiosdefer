@@ -1,105 +1,24 @@
+// calling build.cmd
 {
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "GCC Build",
+            "label": "GCC Debug Build",
             "type": "shell",
-            "command": "D:/msys64/ucrt64/bin/gcc.exe",
+            "command": "build.cmd",
             "args": [
-                "-g",
-                "-O0",
-                "-o",
-                "defer_test_gcc.exe",
-                "main.c",
-                "-std=c11",
-                "-Wall",
-                "-Wextra",
-                "-lpthread"
+                "debug-gcc"
             ],
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "problemMatcher": ["$gcc"],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            }
+            "group": "build"
         },
-        // {
-        //     "label": "Build with MSVC",
-        //     "type": "shell",
-        //     "command": "cmd",
-        //     "args": [
-        //         "/c",
-        //         "\"D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvars64.bat\" && cl /Zi /Od /Fe:defer_test_msvc.exe main.c /W4"
-        //     ],
-        //     "group": "build",
-        //     "presentation": {
-        //         "echo": true,
-        //         "reveal": "always",
-        //         "focus": false,
-        //         "panel": "shared"
-        //     },
-        //     "problemMatcher": ["$msCompile"],
-        //     "options": {
-        //         "cwd": "${workspaceFolder}"
-        //     }
-        // },
         {
-            "label": "MSVC Build",
+            "label": "MSVC Debug Build",
             "type": "shell",
-            "command": "cl",
+            "command": "build.cmd",
             "args": [
-                "/Zi",
-                "/Od",
-                "/Fe:defer_test_msvc.exe",
-                "main.c",
-                "/W4"
+                "debug-msvc"
             ],
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
-            "problemMatcher": ["$msCompile"],
-            "detail": "Open VS Code from Developer Command Prompt"
-        },
-    //     {
-    //         "label": "Run GCC Build",
-    //         "type": "shell",
-    //         "command": "${workspaceFolder}/defer_test_gcc.exe",
-    //         "group": "test",
-    //         "dependsOn": "Build with GCC",
-    //         "presentation": {
-    //             "echo": true,
-    //             "reveal": "always",
-    //             "focus": false,
-    //             "panel": "shared"
-    //         },
-    //         "windows": {
-    //             "command": "${workspaceFolder}\\defer_test_gcc.exe"
-    //         }
-    //     },
-    //     {
-    //         "label": "Run MSVC Build", 
-    //         "type": "shell",
-    //         "command": "${workspaceFolder}/defer_test_msvc.exe",
-    //         "group": "test",
-    //         "dependsOn": "Build with MSVC",
-    //         "presentation": {
-    //             "echo": true,
-    //             "reveal": "always",
-    //             "focus": false,
-    //             "panel": "shared"
-    //         },
-    //         "windows": {
-    //             "command": "${workspaceFolder}\\defer_test_msvc.exe"
-    //         }
-    //     }
+            "group": "build"
+        }
     ]
 }

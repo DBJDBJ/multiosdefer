@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "GCC Debug",
+            "name": "GCC Debug Build",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/defer_test_gcc.exe",
@@ -20,10 +20,10 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "GCC Build"
+            "preLaunchTask": "GCC Debug Build"
         },
         {
-            "name": "MSVC Debug",
+            "name": "MSVC Debug Build",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/defer_test_msvc.exe",
@@ -32,7 +32,7 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "console": "integratedTerminal",
-            "preLaunchTask": "MSVC Build"
+            "preLaunchTask": "MSVC Debug Build"
         }
     ]
 }
