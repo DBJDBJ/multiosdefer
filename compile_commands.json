@@ -1,0 +1,12 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-std=c23",
+      "main.c"
+    ],
+    "directory": "/home/dbjdbj/projects/2025-12/multiosdefer",
+    "file": "/home/dbjdbj/projects/2025-12/multiosdefer/main.c"
+  }
+]
