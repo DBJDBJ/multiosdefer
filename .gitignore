@@ -1,4 +1,5 @@
 # hand made (cuban cigar is also "hecho a mano")
+*.out
 *.obj
 *.exe
 *.txt
