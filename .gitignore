@@ -6,3 +6,7 @@
 *.ilk
 *.pdb
 *.idb
+
+# the build target
+multiosdefer
+.cache/
