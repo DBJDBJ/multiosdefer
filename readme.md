@@ -13,7 +13,7 @@
 
 ## Summary
 
-Basicaly not ideal. But simple and working defer. Making your C23 code safer.
+Basicaly not ideal. But simple and working defer. Making your C23 code safer. Right now. Even MSVC code.
 
 Enjoy!
 

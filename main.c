@@ -1,4 +1,5 @@
 // main.c - Test both defer implementations
+// 
 #define DEFER_TESTING
 
 // Compiler detection
